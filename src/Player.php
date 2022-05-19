@@ -10,7 +10,11 @@ class Player
         $this->dealer = $dealer;
     }
 
-    public function createPlayerOneHand(): array
+    public function playersHand(Dealer $dealer): array
     {
+        $hand[] = array_pop($this->dealer->deck);
+        $hand[] = array_pop($this->dealer->deck);
+        return $hand;
     }
 }
+

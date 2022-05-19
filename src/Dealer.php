@@ -17,17 +17,5 @@ class Dealer
         return $this->deck = $deck;
     }
 
-    public function dealToPlayer1($deck): array
-    {
-        $hand[] = array_pop($this->deck);
-        $hand[] = array_pop($this->deck);
-        return $hand;
-    }
-    public function dealToPlayer2($deck): array
-    {
-        $hand[] = array_pop($this->deck);
-        $hand[] = array_pop($this->deck);
-        return $hand;
-    }
 }
 
