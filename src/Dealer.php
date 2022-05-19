@@ -5,26 +5,29 @@ require_once 'src/DeckBuilder.php';
 class Dealer
 
 {
-    public array $deck;
-
-    public DeckBuilder $deckBuilder;
-
     public function __construct(DeckBuilder $deckBuilder)
     {
         $this->deckBuilder = $deckBuilder;
     }
 
-    public function shuffleDeck(): void
+    public function shuffleDeck(): array
     {
         $deck = $this->deckBuilder->createDeck();
         shuffle($deck);
-        $this->deck = $deck;
+        return $this->deck = $deck;
     }
 
-    public function dealToPlayer(): array
+    public function dealToPlayer1($deck): array
     {
-        $this->shuffleDeck();
-        return array_pop($this->deck);
+        $hand[] = array_pop($this->deck);
+        $hand[] = array_pop($this->deck);
+        return $hand;
+    }
+    public function dealToPlayer2($deck): array
+    {
+        $hand[] = array_pop($this->deck);
+        $hand[] = array_pop($this->deck);
+        return $hand;
     }
 }
 
